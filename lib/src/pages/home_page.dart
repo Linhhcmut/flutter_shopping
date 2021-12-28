@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/src/blocs/home_bloc.dart';
@@ -19,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _menuPress = GlobalKey<ScaffoldState>();
 
   void onTapped(int index) {
-    log(index.toString());
     setState(() {
       _selectedPageIndex = index;
     });
@@ -36,44 +33,8 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         key: _menuPress,
         drawer: Drawer(),
-        appBar: AppBar(
-          backgroundColor: Colors.grey[100],
-          elevation: 0.0,
-          actions: <Widget>[
-            IconButton(
-              onPressed: _cartPress,
-              icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
-            ),
-            IconButton(
-              onPressed: _lockoutPress,
-              icon: Icon(Icons.logout, color: Colors.black),
-            ),
-          ],
-          leading: IconButton(
-            onPressed: () {
-              _menuPress.currentState.openDrawer();
-            },
-            icon: Icon(Icons.menu, color: Colors.black),
-          ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.black),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search, color: Colors.black),
-              label: "Search",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.black),
-              label: "Person",
-            )
-          ],
-          currentIndex: _selectedPageIndex,
-          onTap: onTapped,
-        ),
+        appBar: appBar(),
+        bottomNavigationBar: bottomBar(),
         body: PageView(
           controller: _pageController,
           onPageChanged: (index) {
@@ -88,6 +49,67 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget appBar() {
+    return AppBar(
+      backgroundColor: Colors.grey[100],
+      elevation: 0.0,
+      actions: <Widget>[
+        IconButton(
+          onPressed: _cartPress,
+          icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
+        ),
+        IconButton(
+          onPressed: _lockoutPress,
+          icon: Icon(Icons.logout, color: Colors.black),
+        ),
+      ],
+      leading: IconButton(
+        onPressed: () {
+          _menuPress.currentState.openDrawer();
+        },
+        icon: Icon(Icons.menu, color: Colors.black),
+      ),
+    );
+  }
+
+  Widget bottomBar() {
+    return BottomNavigationBar(
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/icons/icon1_bottomBar.png",
+            color: _selectedPageIndex == 0 ? Color(0xff00cbff) : Colors.black54,
+          ),
+          label: "Home",
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/icons/icon2_bottomBar.png",
+            color: _selectedPageIndex == 1 ? Color(0xff00cbff) : Colors.black54,
+          ),
+          label: "Collections",
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/icons/icon3_bottomBar.png",
+            color: _selectedPageIndex == 2 ? Color(0xff00cbff) : Colors.black54,
+          ),
+          label: "Featured",
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            "assets/icons/icon4_bottomBar.png",
+            color: _selectedPageIndex == 3 ? Color(0xff00cbff) : Colors.black54,
+          ),
+          label: "Person",
+        )
+      ],
+      selectedItemColor: Color(0xff00cbff),
+      currentIndex: _selectedPageIndex,
+      onTap: onTapped,
     );
   }
 
