@@ -76,6 +76,10 @@ flutter:
     - assets/icons/setting_drawer.png
     - assets/icons/help_drawer.png
     - assets/icons/logout_drawer.png
+    - assets/icons/menu.png
+    - assets/icons/cart_home.png
+    
+    
     
     
 

@@ -1,12 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:shop/src/blocs/home_bloc.dart';
-import 'package:shop/src/blocs/login_bloc.dart';
 import 'package:shop/src/constants.dart';
 import 'package:shop/src/pages/home_page/drawer_page.dart';
-import 'package:shop/src/pages/login_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,7 +11,6 @@ class _HomePageState extends State<HomePage> {
   int _selectedPageIndex = 0;
   PageController _pageController = PageController();
 
- 
   final GlobalKey<ScaffoldState> _menuPress = GlobalKey<ScaffoldState>();
 
   //tab bottom bar
@@ -63,6 +56,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(color: Colors.blue),
             Container(color: Colors.green),
+            Container(color: Colors.red),
           ],
         ),
       ),
@@ -76,18 +70,20 @@ class _HomePageState extends State<HomePage> {
       actions: <Widget>[
         IconButton(
           onPressed: _cartPress,
-          icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
-        ),
-        IconButton(
-          onPressed: (){},
-          icon: Icon(Icons.logout, color: Colors.black),
+          icon: Image.asset(
+            "assets/icons/cart_home.png",
+            color: colorTextListDrawer,
+          ),
         ),
       ],
       leading: IconButton(
         onPressed: () {
           _menuPress.currentState.openDrawer();
         },
-        icon: Icon(Icons.menu, color: Colors.black),
+        icon: Image.asset(
+          "assets/icons/menu.png",
+          color: colorTextListDrawer,
+        ),
       ),
     );
   }
@@ -133,5 +129,4 @@ class _HomePageState extends State<HomePage> {
   void _cartPress() async {
     // continue....
   }
-  
 }
