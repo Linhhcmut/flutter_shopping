@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/src/blocs/home_bloc.dart';
 import 'package:shop/src/blocs/login_bloc.dart';
+import 'package:shop/src/constants.dart';
+import 'package:shop/src/pages/home_page/drawer_page.dart';
 import 'package:shop/src/pages/login_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,9 +17,10 @@ class _HomePageState extends State<HomePage> {
   int _selectedPageIndex = 0;
   PageController _pageController = PageController();
 
-  HomeBloc _homeBloc = HomeBloc();
+ 
   final GlobalKey<ScaffoldState> _menuPress = GlobalKey<ScaffoldState>();
 
+  //tab bottom bar
   void onTapped(int index) {
     setState(() {
       _selectedPageIndex = index;
@@ -32,7 +37,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         key: _menuPress,
-        drawer: Drawer(),
+        drawer: DrawerPage(),
         appBar: appBar(),
         bottomNavigationBar: bottomBar(),
         body: PageView(
@@ -43,7 +48,19 @@ class _HomePageState extends State<HomePage> {
             });
           },
           children: <Widget>[
-            Container(color: Colors.black45),
+            Container(
+              child: Center(
+                child: Text(
+                  "reload already in progress",
+                  style: TextStyle(
+                    fontFamily: "Montserrat",
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
             Container(color: Colors.blue),
             Container(color: Colors.green),
           ],
@@ -62,7 +79,7 @@ class _HomePageState extends State<HomePage> {
           icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
         ),
         IconButton(
-          onPressed: _lockoutPress,
+          onPressed: (){},
           icon: Icon(Icons.logout, color: Colors.black),
         ),
       ],
@@ -116,20 +133,5 @@ class _HomePageState extends State<HomePage> {
   void _cartPress() async {
     // continue....
   }
-  void _lockoutPress() async {
-    try {
-      await _homeBloc.isUserLogOut();
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return Provider<LoginBloc>.value(
-              value: LoginBloc(),
-              child: LoginPage(),
-            );
-          },
-        ),
-      );
-    } catch (_) {}
-  }
+  
 }

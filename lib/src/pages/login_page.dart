@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/src/blocs/login_bloc.dart';
-import 'package:shop/src/pages/home_page.dart';
+import 'package:shop/src/pages/home_page/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override

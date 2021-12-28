@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -55,7 +55,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -68,6 +67,18 @@ flutter:
     - assets/icons/icon2_bottomBar.png
     - assets/icons/icon3_bottomBar.png
     - assets/icons/icon4_bottomBar.png
+    - assets/images/avatar.jpg
+    - assets/icons/orders_drawer.png
+    - assets/icons/wish_list_drawer.png
+    - assets/icons/last_view_drawer.png
+    - assets/icons/shipping_drawer.png
+    - assets/icons/language_drawer.png
+    - assets/icons/setting_drawer.png
+    - assets/icons/help_drawer.png
+    - assets/icons/logout_drawer.png
+    
+    
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -81,12 +92,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/MontserratRegular-BWBEl.ttf
+        # - asset: fonts/Schyler-Italic.ttf
+        # style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
