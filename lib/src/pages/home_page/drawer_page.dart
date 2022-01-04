@@ -52,7 +52,7 @@ class _DrawerPageState extends State<DrawerPage> {
                   primary: colorBackgroundDrawer,
                   elevation: 0.0,
                 ),
-                onPressed: () {},
+                onPressed: _ordersButtonPress,
                 child: Row(
                   children: <Widget>[
                     Image.asset(
@@ -81,7 +81,7 @@ class _DrawerPageState extends State<DrawerPage> {
                 primary: colorBackgroundDrawer,
                 elevation: 0.0,
               ),
-              onPressed: () {},
+              onPressed: _wishListButtonPress,
               child: Row(
                 children: <Widget>[
                   Image.asset(
@@ -113,7 +113,7 @@ class _DrawerPageState extends State<DrawerPage> {
                   primary: colorBackgroundDrawer,
                   elevation: 0.0,
                 ),
-                onPressed: () {},
+                onPressed: _lastViewedButtonPress,
                 child: Row(
                   children: <Widget>[
                     Image.asset(
@@ -142,7 +142,7 @@ class _DrawerPageState extends State<DrawerPage> {
                 primary: colorBackgroundDrawer,
                 elevation: 0.0,
               ),
-              onPressed: () {},
+              onPressed: _shippingButtonPress,
               child: Row(
                 children: <Widget>[
                   Image.asset(
@@ -174,7 +174,7 @@ class _DrawerPageState extends State<DrawerPage> {
                   primary: colorBackgroundDrawer,
                   elevation: 0.0,
                 ),
-                onPressed: () {},
+                onPressed: _languageButtonPress,
                 child: Row(
                   children: <Widget>[
                     Image.asset(
@@ -206,7 +206,7 @@ class _DrawerPageState extends State<DrawerPage> {
                   primary: colorBackgroundDrawer,
                   elevation: 0.0,
                 ),
-                onPressed: () {},
+                onPressed: _settingButtonPress,
                 child: Row(
                   children: <Widget>[
                     Image.asset(
@@ -233,7 +233,7 @@ class _DrawerPageState extends State<DrawerPage> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: colorBackgroundDrawer, elevation: 0.0),
-              onPressed: () {},
+              onPressed: _helpButtonPress,
               child: Row(
                 children: <Widget>[
                   Image.asset(
@@ -306,5 +306,26 @@ class _DrawerPageState extends State<DrawerPage> {
         ),
       );
     } catch (_) {}
+  }
+  void _ordersButtonPress(){
+    //continue...
+  }
+  void _wishListButtonPress(){
+    //continue...
+  }
+  void _lastViewedButtonPress(){
+    //continue...
+  }
+  void _shippingButtonPress(){
+    //continue...
+  }
+  void _languageButtonPress(){
+    //continue...
+  }
+  void _settingButtonPress(){
+    //continue...
+  }
+  void _helpButtonPress(){
+    //continue...
   }
 }
