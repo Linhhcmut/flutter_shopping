@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop/src/constants.dart';
+import 'package:shop/src/pages/home_page/body/home_body.dart';
 import 'package:shop/src/pages/home_page/drawer_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -41,19 +42,7 @@ class _HomePageState extends State<HomePage> {
             });
           },
           children: <Widget>[
-            Container(
-              child: Center(
-                child: Text(
-                  "reload already in progress",
-                  style: TextStyle(
-                    fontFamily: "Montserrat",
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
+            Home_Body(),
             Container(color: Colors.blue),
             Container(color: Colors.green),
             Container(color: Colors.red),

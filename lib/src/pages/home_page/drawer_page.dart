@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/src/blocs/home_bloc.dart';
 import 'package:shop/src/blocs/login_bloc.dart';
-import 'package:shop/src/constants.dart';
+import 'package:shop/src/constants/drawer_constant.dart';
 import 'package:shop/src/pages/login_page.dart';
 
 class DrawerPage extends StatefulWidget {
@@ -16,40 +16,40 @@ class _DrawerPageState extends State<DrawerPage> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: colorBackgroundDrawer,
+      backgroundColor: colorBackground,
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
             accountEmail: Text(
               "linhngtaynguyen@gmail.com",
               style: TextStyle(
-                fontSize: fontSizeEmailDrawer,
-                color: colorTextListDrawer,
-                fontFamily: fontTextDrawer,
+                fontSize: fontSizeEmail,
+                color: colorTextList,
+                fontFamily: fontText,
               ),
             ),
             accountName: Text(
               "Welcome, Linh Nguyen",
               style: TextStyle(
-                fontSize: fontSizeAccountNameDrawer,
-                color: colorAcountNameDrawer,
-                fontFamily: fontTextDrawer,
+                fontSize: fontSizeAccountName,
+                color: colorAcountName,
+                fontFamily: fontText,
               ),
             ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.white,
               backgroundImage: AssetImage("assets/images/avatar.jpg"),
             ),
-            decoration: BoxDecoration(color: colorBackgroundDrawer),
+            decoration: BoxDecoration(color: colorBackground),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: paddingVerticalListDrawer,
+              vertical: paddingVerticalList,
             ),
             child: Container(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: colorBackgroundDrawer,
+                  primary: colorBackground,
                   elevation: 0.0,
                 ),
                 onPressed: _ordersButtonPress,
@@ -57,17 +57,17 @@ class _DrawerPageState extends State<DrawerPage> {
                   children: <Widget>[
                     Image.asset(
                       "assets/icons/orders_drawer.png",
-                      color: colorTextListDrawer,
+                      color: colorTextList,
                     ),
                     SizedBox(
-                      width: widthsizeBoxDrawer,
+                      width: widthsizeBox,
                     ),
                     Text(
                       "Orders",
                       style: TextStyle(
-                        color: colorTextListDrawer,
-                        fontSize: fontSizeTextDrawer,
-                        fontFamily: fontTextDrawer,
+                        color: colorTextList,
+                        fontSize: fontSizeText,
+                        fontFamily: fontText,
                       ),
                     ),
                   ],
@@ -78,7 +78,7 @@ class _DrawerPageState extends State<DrawerPage> {
           Container(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: colorBackgroundDrawer,
+                primary: colorBackground,
                 elevation: 0.0,
               ),
               onPressed: _wishListButtonPress,
@@ -86,17 +86,17 @@ class _DrawerPageState extends State<DrawerPage> {
                 children: <Widget>[
                   Image.asset(
                     "assets/icons/wish_list_drawer.png",
-                    color: colorTextListDrawer,
+                    color: colorTextList,
                   ),
                   SizedBox(
-                    width: widthsizeBoxDrawer,
+                    width: widthsizeBox,
                   ),
                   Text(
                     "Wish List",
                     style: TextStyle(
-                      fontSize: fontSizeTextDrawer,
-                      color: colorTextListDrawer,
-                      fontFamily: fontTextDrawer,
+                      fontSize: fontSizeText,
+                      color: colorTextList,
+                      fontFamily: fontText,
                     ),
                   )
                 ],
@@ -105,12 +105,12 @@ class _DrawerPageState extends State<DrawerPage> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: paddingVerticalListDrawer,
+              vertical: paddingVerticalList,
             ),
             child: Container(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: colorBackgroundDrawer,
+                  primary: colorBackground,
                   elevation: 0.0,
                 ),
                 onPressed: _lastViewedButtonPress,
@@ -118,17 +118,17 @@ class _DrawerPageState extends State<DrawerPage> {
                   children: <Widget>[
                     Image.asset(
                       "assets/icons/last_view_drawer.png",
-                      color: colorTextListDrawer,
+                      color: colorTextList,
                     ),
                     SizedBox(
-                      width: widthsizeBoxDrawer,
+                      width: widthsizeBox,
                     ),
                     Text(
                       "Last Viewed",
                       style: TextStyle(
-                        color: colorTextListDrawer,
-                        fontSize: fontSizeTextDrawer,
-                        fontFamily: fontTextDrawer,
+                        color: colorTextList,
+                        fontSize: fontSizeText,
+                        fontFamily: fontText,
                       ),
                     )
                   ],
@@ -139,7 +139,7 @@ class _DrawerPageState extends State<DrawerPage> {
           Container(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: colorBackgroundDrawer,
+                primary: colorBackground,
                 elevation: 0.0,
               ),
               onPressed: _shippingButtonPress,
@@ -147,17 +147,17 @@ class _DrawerPageState extends State<DrawerPage> {
                 children: <Widget>[
                   Image.asset(
                     "assets/icons/shipping_drawer.png",
-                    color: colorTextListDrawer,
+                    color: colorTextList,
                   ),
                   SizedBox(
-                    width: widthsizeBoxDrawer,
+                    width: widthsizeBox,
                   ),
                   Text(
                     "Shipping Adress",
                     style: TextStyle(
-                      fontSize: fontSizeTextDrawer,
-                      fontFamily: fontTextDrawer,
-                      color: colorTextListDrawer,
+                      fontSize: fontSizeText,
+                      fontFamily: fontText,
+                      color: colorTextList,
                     ),
                   )
                 ],
@@ -166,12 +166,12 @@ class _DrawerPageState extends State<DrawerPage> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: paddingVerticalListDrawer,
+              vertical: paddingVerticalList,
             ),
             child: Container(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: colorBackgroundDrawer,
+                  primary: colorBackground,
                   elevation: 0.0,
                 ),
                 onPressed: _languageButtonPress,
@@ -179,17 +179,17 @@ class _DrawerPageState extends State<DrawerPage> {
                   children: <Widget>[
                     Image.asset(
                       "assets/icons/language_drawer.png",
-                      color: colorTextListDrawer,
+                      color: colorTextList,
                     ),
                     SizedBox(
-                      width: widthsizeBoxDrawer,
+                      width: widthsizeBox,
                     ),
                     Text(
                       "Language",
                       style: TextStyle(
-                        fontSize: fontSizeTextDrawer,
-                        fontFamily: fontTextDrawer,
-                        color: colorTextListDrawer,
+                        fontSize: fontSizeText,
+                        fontFamily: fontText,
+                        color: colorTextList,
                       ),
                     )
                   ],
@@ -199,11 +199,11 @@ class _DrawerPageState extends State<DrawerPage> {
           ),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: paddingVerticalListDrawer),
+                const EdgeInsets.symmetric(vertical: paddingVerticalList),
             child: Container(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: colorBackgroundDrawer,
+                  primary: colorBackground,
                   elevation: 0.0,
                 ),
                 onPressed: _settingButtonPress,
@@ -211,17 +211,17 @@ class _DrawerPageState extends State<DrawerPage> {
                   children: <Widget>[
                     Image.asset(
                       "assets/icons/setting_drawer.png",
-                      color: colorTextListDrawer,
+                      color: colorTextList,
                     ),
                     SizedBox(
-                      width: widthsizeBoxDrawer,
+                      width: widthsizeBox,
                     ),
                     Text(
                       "Settings",
                       style: TextStyle(
-                        fontSize: fontSizeTextDrawer,
-                        color: colorTextListDrawer,
-                        fontFamily: fontTextDrawer,
+                        fontSize: fontSizeText,
+                        color: colorTextList,
+                        fontFamily: fontText,
                       ),
                     )
                   ],
@@ -232,23 +232,23 @@ class _DrawerPageState extends State<DrawerPage> {
           Container(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: colorBackgroundDrawer, elevation: 0.0),
+                  primary: colorBackground, elevation: 0.0),
               onPressed: _helpButtonPress,
               child: Row(
                 children: <Widget>[
                   Image.asset(
                     "assets/icons/help_drawer.png",
-                    color: colorTextListDrawer,
+                    color: colorTextList,
                   ),
                   SizedBox(
-                    width: widthsizeBoxDrawer,
+                    width: widthsizeBox,
                   ),
                   Text(
                     "Help",
                     style: TextStyle(
-                      fontSize: fontSizeTextDrawer,
-                      color: colorTextListDrawer,
-                      fontFamily: fontTextDrawer,
+                      fontSize: fontSizeText,
+                      color: colorTextList,
+                      fontFamily: fontText,
                     ),
                   )
                 ],
@@ -260,7 +260,7 @@ class _DrawerPageState extends State<DrawerPage> {
             child: Container(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: colorBackgroundDrawer,
+                  primary: colorBackground,
                   elevation: 0.0,
                 ),
                 onPressed: _lockoutPress,
@@ -268,17 +268,17 @@ class _DrawerPageState extends State<DrawerPage> {
                   children: <Widget>[
                     Image.asset(
                       "assets/icons/logout_drawer.png",
-                      color: colorTextListDrawer,
+                      color: colorTextList,
                     ),
                     SizedBox(
-                      width: widthsizeBoxDrawer,
+                      width: widthsizeBox,
                     ),
                     Text(
                       "Log out",
                       style: TextStyle(
-                        fontSize: fontSizeTextDrawer,
-                        color: colorTextListDrawer,
-                        fontFamily: fontTextDrawer,
+                        fontSize: fontSizeText,
+                        color: colorTextList,
+                        fontFamily: fontText,
                       ),
                     )
                   ],
