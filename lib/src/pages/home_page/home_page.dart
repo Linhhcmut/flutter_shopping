@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/src/constants.dart';
+import 'package:shop/src/constants/drawer_constant.dart';
 import 'package:shop/src/pages/home_page/body/home_body.dart';
 import 'package:shop/src/pages/home_page/drawer_page.dart';
 
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: _cartPress,
           icon: Image.asset(
             "assets/icons/cart_home.png",
-            color: colorTextListDrawer,
+            color: colorTextList,
           ),
         ),
       ],
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
         },
         icon: Image.asset(
           "assets/icons/menu.png",
-          color: colorTextListDrawer,
+          color: colorTextList,
         ),
       ),
     );

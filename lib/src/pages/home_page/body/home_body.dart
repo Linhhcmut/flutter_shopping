@@ -14,8 +14,7 @@ class _Home_BodyState extends State<Home_Body> {
       child: ListView(
         children: <Widget>[
           Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: paddingListView),
+            padding: const EdgeInsets.symmetric(vertical: paddingListView),
             child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -43,10 +42,9 @@ class _Home_BodyState extends State<Home_Body> {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: paddingListView),
+            padding: const EdgeInsets.symmetric(vertical: paddingListView),
             child: Container(
-              height: 130,
+              height: heightCollection,
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,10 +52,10 @@ class _Home_BodyState extends State<Home_Body> {
                   Flexible(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(borderImage),
                         color: Colors.black,
                       ),
-                      height: 130,
+                      height: heightCollection,
                     ),
                   ),
                   SizedBox(
@@ -66,10 +64,10 @@ class _Home_BodyState extends State<Home_Body> {
                   Flexible(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(borderImage),
                         color: Colors.blue,
                       ),
-                      height: 130,
+                      height: heightCollection,
                     ),
                   ),
                 ],
@@ -95,7 +93,7 @@ class _Home_BodyState extends State<Home_Body> {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(borderImage),
                         side: BorderSide(
                           color: Colors.blue,
                           width: 1.0,
@@ -114,7 +112,12 @@ class _Home_BodyState extends State<Home_Body> {
                 ),
               ),
             ],
-          )
+          ),
+          Row(
+            children: <Widget>[
+              
+            ],
+          ),
         ],
       ),
     );
@@ -123,7 +126,7 @@ class _Home_BodyState extends State<Home_Body> {
   void _searchHomePagePress() {
     //continue...
   }
-  void _pressMoreButton(){
+  void _pressMoreButton() {
     //continue...
   }
 }

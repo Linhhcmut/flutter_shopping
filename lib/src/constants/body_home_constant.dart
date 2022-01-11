@@ -9,3 +9,7 @@ const colorText = Colors.black87;
 const colorTextButton = Color(0xff00cbff);
 //padding
 const double paddingListView = 10;
+//border
+const double borderImage = 10;
+//height
+const double heightCollection = 130;
